@@ -158,7 +158,7 @@ spec:
       serviceAccountName: op-service-account
       containers:
       - name: outpost-container
-        image: outpostlabs/outpost:canary
+        image: ghcr.io/outpostlabs/outpost:canary
         env:
         - name: START_MODE
           value: "setup"
