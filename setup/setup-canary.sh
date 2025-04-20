@@ -130,16 +130,16 @@ metadata:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: qs-service-account
+  name: op-service-account
   namespace: outpost
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: qs-role-binding
+  name: op-role-binding
 subjects:
   - kind: ServiceAccount
-    name: qs-service-account
+    name: op-service-account
     namespace: outpost
 roleRef:
   kind: ClusterRole
@@ -155,7 +155,7 @@ spec:
   ttlSecondsAfterFinished: 3600
   template:
     spec:
-      serviceAccountName: qs-service-account
+      serviceAccountName: op-service-account
       containers:
       - name: outpost-container
         image: outpostlabs/outpost:canary
