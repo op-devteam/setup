@@ -87,7 +87,7 @@ echo "Installing nfs-common..."
 sudo apt-get update
 sudo apt-get install open-iscsi nfs-common -y
 
-# Disable portmapper services --> https://github.com/outpostlabs/outpost/issues/18
+# Disable portmapper services --> https://github.com/outposthq/outpost/issues/18
 systemctl stop rpcbind.service rpcbind.socket
 systemctl disable rpcbind.service rpcbind.socket
 
@@ -157,7 +157,7 @@ spec:
       serviceAccountName: op-service-account
       containers:
       - name: outpost-container
-        image: ghcr.io/outpostlabs/outpost:latest
+        image: ghcr.io/outposthq/outpost:latest
         env:
         - name: START_MODE
           value: "setup"
